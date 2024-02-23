@@ -34,6 +34,14 @@ The designs were created to the following widths:
 - Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
 - Weights: 700 */
 
+:root {
+  --clr--white-primary: hsl(0, 0%, 100%);
+  --clr-cream-primary: hsl(30, 38%, 92%);
+  --clr-dark-cyan-primary: hsl(158, 36%, 37%);
+  --clr-very-dark-neutral: hsl(212, 21%, 14%);
+  --clr-dark-grayish-neutral: hsl(228, 12%, 48%);
+}
+
 *,
 *::before,
 *::after {
@@ -50,7 +58,12 @@ html {
 
 body {
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: var(--clr-cream-primary);
+  padding: 3rem 2rem;
+  color: var(--clr-dark-grayish-neutral);
 }
 
 img,
@@ -60,4 +73,86 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+}
+
+/* Product card */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr--white-primary);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.product-card__content {
+  padding: 2rem;
+}
+
+/* Product card text */
+
+.product-card__ribbon {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.product-card__title {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--clr-very-dark-neutral);
+  margin-bottom: 1.5rem;
+}
+
+.product-card__desc {
+  margin-bottom: 1.5rem;
+}
+
+/* Product card prices */
+
+.product-card__prices {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.product-card__new-price {
+  padding-right: 2rem;
+  font-family: "Fraunces", serif;
+  font-size: 3rem;
+  color: var(--clr-dark-cyan-primary);
+}
+
+.product-card__old-price {
+  text-decoration: line-through;
+}
+
+/* btn */
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--clr--white-primary);
+  font-weight: 700;
+}
+
+.btn img {
+  margin-right: 1rem;
+}
+
+.product-card__btn {
+  background-color: var(--clr-dark-cyan-primary);
+}
+
+.product-card__btn:hover {
+  background-color: var(--clr-very-dark-neutral);
+  cursor: pointer;
 }
