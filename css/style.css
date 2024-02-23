@@ -1,4 +1,4 @@
-# Front-end Style Guide
+/* # Front-end Style Guide
 
 ## Layout
 
@@ -32,4 +32,32 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 - Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
-- Weights: 700
+- Weights: 700 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
