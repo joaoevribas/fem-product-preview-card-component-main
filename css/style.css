@@ -52,6 +52,11 @@ The designs were created to the following widths:
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -62,8 +67,10 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   background-color: var(--clr-cream-primary);
-  padding: 3rem 2rem;
+  padding: 2rem;
   color: var(--clr-dark-grayish-neutral);
+  display: grid;
+  place-content: center;
 }
 
 img,
@@ -78,8 +85,7 @@ svg {
 /* Product card */
 
 .product-card {
-  display: flex;
-  flex-direction: column;
+  max-width: 60rem;
   background-color: var(--clr--white-primary);
   border-radius: 0.8rem;
   overflow: hidden;
@@ -87,6 +93,8 @@ svg {
 
 .product-card__content {
   padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
 }
 
 /* Product card text */
@@ -95,7 +103,6 @@ svg {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  margin-bottom: 1rem;
 }
 
 .product-card__title {
@@ -104,11 +111,6 @@ svg {
   font-size: 3rem;
   line-height: 1;
   color: var(--clr-very-dark-neutral);
-  margin-bottom: 1.5rem;
-}
-
-.product-card__desc {
-  margin-bottom: 1.5rem;
 }
 
 /* Product card prices */
@@ -116,7 +118,6 @@ svg {
 .product-card__prices {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .product-card__new-price {
@@ -136,7 +137,7 @@ svg {
   display: flex;
   justify-content: center;
   padding: 1.5rem;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   border: none;
   border-radius: 0.5rem;
@@ -155,4 +156,40 @@ svg {
 .product-card__btn:hover {
   background-color: var(--clr-very-dark-neutral);
   cursor: pointer;
+}
+
+.product-card__btn:focus {
+  background-color: var(--clr-very-dark-neutral);
+}
+
+/* Media query for desktop */
+
+@media (min-width: 650px) {
+  .product-card {
+    max-width: 60rem;
+    display: flex;
+  }
+
+  .product-card__img,
+  .product-card__content {
+    flex: 1;
+  }
+
+  .product-card__content {
+    padding-top: 3rem;
+    padding-left: 3rem;
+  }
+
+  .product-card__title {
+    width: 80%;
+  }
+
+  .product-card__desc {
+    line-height: 1.8;
+    width: 85%;
+  }
+
+  .product-card__btn {
+    width: 90%;
+  }
 }
